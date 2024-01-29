@@ -6,10 +6,11 @@ use Exception;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Http\Resources\TaskResource;
+use App\Http\Requests\CreateTaskRequest;
 
 class TaskController extends Controller
 {
-    public function store(Request $request){
+    public function store(CreateTaskRequest $request){
         $task=new Task;
         $task->desc=$request->desc;
         $task->save();
